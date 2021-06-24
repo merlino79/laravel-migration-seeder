@@ -1,5 +1,5 @@
 <?php
-use App\Holiday;
+use App\holiday;
 use Illuminate\Database\Seeder;
 
 class Db_holidaysTableSeed extends Seeder
@@ -24,7 +24,7 @@ class Db_holidaysTableSeed extends Seeder
 
     public function run()
     {
-        $holiday = new Holiday();
+        $holiday = new holiday();
         $holiday->refence = "ale_agency";
         $holiday->addres = "via dei gelsomini";
         $holiday->postal_code =" 20100";

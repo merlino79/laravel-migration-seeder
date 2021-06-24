@@ -13,7 +13,7 @@ class CreateHolidayTable extends Migration
      */
     public function up()
     {
-        Schema::create('holiday', function (Blueprint $table) {
+        Schema::create('holidays', function (Blueprint $table) {
             $table->string('reference', 12);
             $table->string('address', 100);
             $table->string('postal_code', 10);
@@ -36,6 +36,6 @@ class CreateHolidayTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('holiday');
+        Schema::dropIfExists('holidays');
     }
 }
