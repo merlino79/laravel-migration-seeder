@@ -14,8 +14,19 @@ class CreateHolidayTable extends Migration
     public function up()
     {
         Schema::create('holiday', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            
+            $table->string('reference', 12);
+            $table->string('address', 100);
+             $table->string('postal_code', 10);
+             $table->string('city', 50);
+             $table->string('state', 50);
+             $table->float('price', 7, 2);
+             $table->tinyInteger('rooms')->unsigned();
+             $table->string('destination', 30);
+             $table->string('type_of_accommodation', 20);
+             $table->boolean('car_parking')->default(1);
+             $table->string('season', 10);
+             $table->timestamps();
         });
     }
 
