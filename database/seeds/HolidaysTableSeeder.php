@@ -3,7 +3,7 @@
 use App\Holiday;
 use Illuminate\Database\Seeder;
 
-class Db_holidaysTableSeed extends Seeder
+class HolidaysTableSeeder extends Seeder
 {
   /**
    * Run the database seeds.
