@@ -10,7 +10,7 @@
   <title>laravel_migration_seeder</title>
 </head>
 <body>
-  @include('partials.header')
+  @include('paritials.header')
   @yield('content') 
 
 </body>
