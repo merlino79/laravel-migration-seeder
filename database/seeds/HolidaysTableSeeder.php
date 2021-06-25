@@ -1,33 +1,19 @@
 <?php
-
 use App\Holiday;
 use Illuminate\Database\Seeder;
 
-class Db_holidaysTableSeed extends Seeder
+class HolidaysTableSeeder extends Seeder
 {
-  /**
-   * Run the database seeds.
-   *
-   * @return void
-   */
-  // $table->string('reference', 12);
-  // $table->string('address', 100);
-  // $table->string('postal_code', 10);
-  // $table->string('city', 50);
-  // $table->string('state', 50);
-  // $table->float('price', 7, 2);
-  // $table->tinyInteger('rooms')->unsigned();
-  // $table->string('destination', 30);
-  // $table->string('type_of_accommodation', 20);
-  // $table->boolean('car_parking')->default(1);
-  // $table->string('season', 10);
-  // $table->timestamps();
-
-  public function run()
-  {
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
     $holiday = new Holiday();
-    $holiday->refence = "ale_agency";
-    $holiday->addres = "via dei gelsomini";
+    $holiday->reference = "ale_agency";
+    $holiday->address = "via dei gelsomini";
     $holiday->postal_code = " 20100";
     $holiday->city = " Milano";
     $holiday->state = "italia";
@@ -37,5 +23,6 @@ class Db_holidaysTableSeed extends Seeder
     $holiday->type_of_accommodation = "apartman";
     $holiday->season = "winter";
     $holiday->save();
-  }
+
+    }
 }
