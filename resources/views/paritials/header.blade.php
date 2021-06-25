@@ -14,7 +14,7 @@
           <a class="nav-link" href="{{ route('contacts') }}">contatti</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('holiday') }}">holiday</a>
+          <a class="nav-link" href="{{ route('home') }}">holiday</a>
         </li>
        
         
