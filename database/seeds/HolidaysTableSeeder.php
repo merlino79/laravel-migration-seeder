@@ -1,6 +1,7 @@
 <?php
 use App\Holiday;
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker; 
 
 class HolidaysTableSeeder extends Seeder
 {
@@ -9,20 +10,47 @@ class HolidaysTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker) 
     {
-    $holiday = new Holiday();
-    $holiday->reference = "ale_agency";
-    $holiday->address = "via dei gelsomini";
-    $holiday->postal_code = " 20100";
-    $holiday->city = " Milano";
-    $holiday->state = "italia";
-    $holiday->price = "1500";
-    $holiday->rooms = "5";
-    $holiday->destination = "portogallo";
-    $holiday->type_of_accommodation = "apartman";
-    $holiday->season = "winter";
-    $holiday->save();
+
+    
+      for ($i=0; $i < 100 ; $i++)
+       {
+
+        $holiday = new Holiday();
+        $holiday->reference = $faker->bothify('??-########');;
+        $holiday->address = $faker->streetAddress();
+        $holiday->postal_code = $faker->postcode();
+        $holiday->city = $faker->city();
+        $holiday->state =  $faker->state();
+        $holiday->price = $faker->randomFloat(2,50000,1000000);
+        $holiday->rooms =  $faker->numberBetween(1,20);
+        $holiday->destination = $faker->state();
+        $holiday->type_of_accommodation = $this->typeRand();
+        $holiday->season = $this->seasons();
+        $holiday->save();
+
+
+
+      }
+
+      
+
+    
 
     }
+    private function typeRand()
+    {
+      $arr = ['monolocale', 'bilocale', 'appartamento', 'attico', 'villetta', 'loft'];
+      shuffle($arr);
+      return $arr[0];
+    }
+    private function seasons()
+    {
+      $arr = ['monolocale', 'bilocale', 'appartamento', 'attico', 'villetta', 'loft'];
+      shuffle($arr);
+      return $arr[0];
+    }
+
+
 }
